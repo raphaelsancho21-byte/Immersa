@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080e20"><meta name="description" content="Immersa: transforme seu Android em uma experiência VR espacial.">
+<title>Immersa — Spatial VR para Android</title>
+<style>
+:root{color-scheme:dark;--cyan:#50e6f5;--muted:#a9b6ce}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 75% 12%,#162d62 0,transparent 45%),radial-gradient(ellipse at 0 90%,#1a1645 0,transparent 45%),#080e20;color:white;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+header{max-width:1120px;margin:auto;padding:26px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff15}
+.brand{font-size:25px;font-weight:850;letter-spacing:-1px}.brand span{color:var(--cyan)}a{color:inherit;text-decoration:none}
+nav a{color:var(--muted);margin-left:22px;font-size:14px}
+main{max-width:1120px;margin:auto;padding:85px 24px 45px}
+.tag{display:inline-flex;padding:9px 14px;border:1px solid #50e6f544;border-radius:99px;background:#50e6f510;color:var(--cyan);font-size:12px;letter-spacing:1.5px;font-weight:700}
+h1{font-size:clamp(48px,8vw,100px);line-height:1.04;letter-spacing:-5px;max-width:880px;margin:28px 0}
+h1 em{font-style:normal;background:linear-gradient(90deg,#5ef2ff,#8b80ff);background-clip:text;color:transparent}
+.lead{max-width:610px;color:var(--muted);font-size:19px;line-height:1.75}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.btn{padding:16px 23px;border-radius:12px;font-weight:750;background:var(--cyan);color:#071324;display:inline-flex;align-items:center;gap:10px}
+.btn.secondary{background:#ffffff12;border:1px solid #ffffff24;color:#fff}
+.note{color:var(--muted);font-size:13px;margin-top:16px}
+.visual{margin:80px 0 60px;min-height:240px;border-radius:24px;border:1px solid #ffffff25;background:linear-gradient(135deg,#13254caa,#10142b),repeating-linear-gradient(90deg,transparent 0 90px,#ffffff08 91px);display:flex;justify-content:center;align-items:center;gap:18px;padding:30px;box-shadow:0 30px 100px #0007}
+.eye{width:45%;height:200px;border:2px solid #50e6f588;border-radius:24px;background:radial-gradient(circle at center,#28538c,#101a35 70%);display:flex;align-items:center;justify-content:center;text-align:center;color:#b7f8ff;box-shadow:inset 0 0 50px #00ddff14}
+.eye span{padding:15px 25px;border:1px solid #50e6f588;background:#091b35cc;border-radius:12px}
+h2{font-size:32px;letter-spacing:-1px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:30px 0 70px}
+.card{padding:26px;background:#ffffff08;border:1px solid #ffffff19;border-radius:18px}.card b{font-size:19px}.card p{color:var(--muted);line-height:1.7;font-size:14px}
+footer{border-top:1px solid #ffffff15;padding:30px 24px;text-align:center;color:var(--muted);font-size:13px}
+@media(max-width:680px){h1{letter-spacing:-2px}.grid{grid-template-columns:1fr}.visual{margin-top:45px;min-height:150px;gap:8px;padding:12px}.eye{height:150px}.eye span{padding:10px;font-size:12px}nav a{margin-left:8px}}
+</style>
+</head>
+<body>
+<header><a class="brand" href="#">◉ Immer<span>sa</span></a><nav><a href="#features">Recursos</a><a href="https://github.com/raphaelsancho21-byte/Immersa">GitHub</a></nav></header>
+<main>
+<div class="tag">◉ IMMERSA · V0.1 ALPHA</div>
+<h1>Seu mundo.<br><em>Outra dimensão.</em></h1>
+<p class="lead">Transforme seu smartphone Android em uma experiência de realidade virtual com rastreamento da cabeça, visão estereoscópica e painéis espaciais.</p>
+<div class="actions"><a class="btn" id="download" href="https://github.com/raphaelsancho21-byte/Immersa/actions/workflows/android.yml">↓ Obter APK Alpha</a><a class="btn secondary" href="https://github.com/raphaelsancho21-byte/Immersa">Ver código-fonte ↗</a></div>
+<p class="note" id="status">Verificando se há uma versão publicada…</p>
+<div class="visual"><div class="eye"><span>◉ IMMERSA<br>SPATIAL HOME</span></div><div class="eye"><span>◉ IMMERSA<br>SPATIAL HOME</span></div></div>
+<section id="features"><h2>Uma nova forma de explorar</h2><div class="grid">
+<div class="card"><b>◉ Head Tracking</b><p>Use os sensores do smartphone para olhar ao redor do espaço virtual.</p></div>
+<div class="card"><b>▣ Janelas espaciais</b><p>Interfaces renderizadas em um ambiente 3D com seleção por olhar.</p></div>
+<div class="card"><b>▦ Android Launcher</b><p>Encontre e abra aplicativos instalados. Apps externos ainda não são janelas VR integradas.</p></div>
+</div></section>
+<section><h2>Como instalar</h2><p class="lead">Quando houver um APK publicado, toque em “Baixar APK”, permita a instalação de aplicativos desta fonte no Android e abra o Immersa. Use um visor VR compatível com smartphone para visualizar a imagem estereoscópica.</p></section>
+</main>
+<footer>Immersa · Projeto experimental de código aberto · Android VR</footer>
+<script>
+(async()=>{const btn=document.getElementById('download'),status=document.getElementById('status');try{const r=await fetch('https://api.github.com/repos/raphaelsancho21-byte/Immersa/releases/latest');if(!r.ok)throw Error('not published');const data=await r.json();const apk=data.assets.find(x=>x.name.toLowerCase().endsWith('.apk'));if(!apk)throw Error('no apk');btn.href=apk.browser_download_url;btn.textContent='↓ Baixar APK '+data.tag_name;status.textContent='APK publicado no GitHub Releases · '+data.tag_name;}catch(e){status.textContent='APK ainda não publicado. O botão abre as compilações do GitHub Actions (requer login para baixar o artefato).';}})();
+</script>
+</body></html>
